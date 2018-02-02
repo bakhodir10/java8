@@ -20,4 +20,5 @@ public class Example2 {
     public static void myFunction4(int[] numbers) {
         Arrays.stream(numbers).average().ifPresent(System.out::print);
     }
+
 }
