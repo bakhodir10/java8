@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Example2 {
-    
+
     public static boolean myFunction1(List<String> list, String text) {
         return list.stream().anyMatch(e -> e.equals(text));
     }
@@ -21,4 +21,17 @@ public class Example2 {
         Arrays.stream(numbers).average().ifPresent(System.out::print);
     }
 
+    public static Person myFunction5(List<Person> personList) {
+        return personList
+                .stream()
+                .max((person1, person2) -> person1.getAge() > person2.getAge() ? 1 : -1)
+                .get();
+    }
+
+    public static Person myFunction6(List<Person> personList) {
+        return personList
+                .stream()
+                .min((person1, person2) -> person1.getAge() > person2.getAge() ? 1 : -1)
+                .get();
+    }
 }
